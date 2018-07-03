@@ -1,0 +1,96 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{calc}
+\usepackage{setspace}
+\usepackage{multicol}
+\usepackage{fancyheadings}
+
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{rotating}
+\usepackage{harvard}
+\usepackage{aer}
+\usepackage{aertt}
+\usepackage{verbatim}
+
+\setlength{\voffset}{0in}
+\setlength{\topmargin}{0pt}
+\setlength{\hoffset}{0pt}
+\setlength{\oddsidemargin}{0pt}
+\setlength{\headheight}{0pt}
+\setlength{\headsep}{.4in}
+\setlength{\marginparsep}{0pt}
+\setlength{\marginparwidth}{0pt}
+\setlength{\marginparpush}{0pt}
+\setlength{\footskip}{.1in}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+\setlength{\parskip}{0pc}
+
+\renewcommand{\baselinestretch}{1.4}
+
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\bd}{\begin{description}}
+\newcommand{\ed}{\end{description}}
+\newcommand{\prbf}[1]{\textbf{#1}}
+\newcommand{\prit}[1]{\textit{#1}}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\bdm}{\begin{displaymath}}
+\newcommand{\edm}{\end{displaymath}}
+\newcommand{\script}[1]{\begin{cal}#1\end{cal}}
+\newcommand{\citee}[1]{\citename{#1} (\citeyear{#1})}
+\newcommand{\h}[1]{\hat{#1}}
+\newcommand{\ds}{\displaystyle}
+
+\newcommand{\app}
+{
+\appendix
+}
+
+\newcommand{\appsection}[1]
+{
+\let\oldthesection\thesection
+\renewcommand{\thesection}{Appendix \oldthesection}
+\section{#1}\let\thesection\oldthesection
+\renewcommand{\theequation}{\thesection\arabic{equation}}
+\setcounter{equation}{0}
+}
+
+\pagestyle{fancyplain}
+\lhead{}
+\chead{Empirical Significance of Learning with Firm-Specific Capital}
+\rhead{\thepage}
+\lfoot{}
+\cfoot{}
+\rfoot{}
+
+\begin{document}
+
+\begin{titlepage}
+\begin{singlespace}
+\title{Empirical Significance of Learning in a New Keynesian Model with Firm-Specific Capital\footnote{I am grateful for the advice and guidance of Eric Leeper, Kim Huynh, Brian Peterson, and Todd Walker; for useful conversations with James Bullard, Troy Davig, Kenneth Kasa, Fabio Milani, Michael Plante, and Bruce Preston; and for comments by the participants of the 2007 Missouri Economics Conference and Indiana University economics department seminars.  All errors are my own.}}
+\date{May 11, 2007}
+\author{James Murray\footnote{\textit{Mailing address}: 100 S Woodlawn, Bloomington, IN  47405. \textit{E-mail address}: jmmurray@indiana.edu.  \textit{Phone number}: (574)315-0459. }\\
+Department of Economics\\
+Indiana University}
+
+\maketitle
+
+\thispagestyle{empty}
+
+\abstract{This paper examines the empirical significance of learning, a type of adaptive, boundedly rational expectations, in the U.S. economy when accounting for endogenous capital accumulation.  Previous literature on the subject has, for simplicity, used monetary models where the capital stock remains fixed.  This paper first shows with a calibrated model that endogenous capital combined with learning has implications for the dynamics of inflation and output that a model with fixed capital cannot replicate.  I estimate a New Keynesian model with endogenous capital and learning with U.S. data to determine whether learning remains significant source of volatility and persistence when capital in endogenous and when including data on aggregate investment.  Furthermore, I examine forecast errors, estimated structural shocks, and estimated expectations, to determine what dynamics of the data learning and rational expectations are able to explain.  I find that learning remains statistically significant when allowing for endogenous capital, however, analysis of the forecast errors, estimated shocks, and agents' expectations show that learning provides minimal insight over rational expectations in explaining the dynamics of post-war U.S. data.} \newline 
+
+\noindent \textit{Keywords}: Learning, firm-specific capital, New Keynesian model, maximum likelihood. \\
+\noindent \textit{JEL classification}: C13, E22, E31, E50.
+\end{singlespace}
+\end{titlepage}
+
+
+\end{document}
+
+
+

@@ -1,0 +1,241 @@
+\app
+\section{Derivation of New Keynesian model}\label{s:apnkpc}
+\subsection{Consumers}
+Consumers choose consumption, $c_t$, labor supply, $n_t(i)$, and purchases of bonds, $b_t(i)$, to maximize utility, given in equation (\ref{eq2:util}), subject to the budget constraint, given in equation (\ref{eq2:bc}).  The first order conditions are,
+\bdm \lambda_t = \xi_t \left(c_t - \eta c_{t-1}\right)^{-\frac{1}{\sigma}} - \beta \eta E_t \xi_{t+1} \left(c_{t+1} - \eta c_t\right)^{-\frac{1}{\sigma}} \edm
+\bdm \mu_t n_t(i)^{\mu} = \lambda_t \frac{w_t(i)}{p_t} \edm
+\bdm \lambda_t = \beta E_t \lambda_{t+1} \frac{1+r_t}{1+\pi_{t+1}} \edm
+where $\lambda_t$ is the Lagrange multiplier for the budget constraint and therefore the marginal utility of real income.  Log-linearizing the first order conditions yields,
+\beq \label{ap:lnlambda} \h{\lambda}_t = \frac{1}{\sigma (1-\beta \eta)(1-\eta)}\left[ \beta \eta E_t \h{c}_{t+1} - (1+\beta \eta^2) \h{c}_t + \eta \h{c}_{t-1} \right] + \left(\h{\xi}_t - \beta \eta E_t \h{\xi}_{t+1} \right) \eeq
+\beq \label{ap:lnlabor} \h{w}_{t}(i) - \h{p}_t = \mu \h{n}_{t}(i) - \h{\lambda}_t + \h{\mu}_t\eeq 
+\beq \label{ap:lneuler} \h{\lambda}_{t} = E_t \h{\lambda}_{t+1} + \h{r}_t - E_t \pi_{t+1} \eeq
+where a hat indicates the percentage deviation of the variable from its steady state.  Equation (\ref{ap:lnlabor}) will be referenced later to express equilibrium real wages in terms of employment.  Equations (\ref{ap:lneuler}) and (\ref{ap:lnlambda}) together implicitly define the log-linear Euler equation which determines consumers' demand for final goods.
+
+\subsection{Producers}
+\subsubsection{Final goods firms}
+The final goods firm chooses its demand for intermediate good $i$ to maximize profits,
+\bdm \Pi_t = p_t \left[ \int_0^1 y_t(i)^{\frac{\theta-1}{\theta}} di \right]^{\frac{\theta}{\theta-1}} - \int_0^1 p_{t}(i) y_{t}(i) di \edm
+The first order condition leads to the demand for intermediate good $i$,
+\beq \label{ap:yi} y_t(i) = \left[ \frac{p_t(i)}{p_t} \right]^{-\theta} y_t. \eeq
+which is given in equation (\ref{eq2:yi}).
+
+\subsubsection{Input choices}
+Intermediate goods firms choose labor demand and rent capital to minimize real total cost, given in equation (\ref{eq2:tckn}), subject to the production function, given in equation (\ref{eq2:yiprod}).  The first order conditions are,
+\beq \label{ap:focn} \frac{w_t(i)}{p_t} = (1-\alpha) s_t(i) \frac{y_t(i)}{n_t(i)}, \eeq
+\beq \label{ap:fock} \rho_t(i) = \alpha s_t(i) \frac{y_t(i)}{k_t(i)}, \eeq
+where $s_t(i)$ is the Lagrange multiplier on the production function.  The Lagrange multiplier is interpreted as the change in the objective function from a marginal ease in the constraint.  In this case the objective function is total cost and the constraint is total output, so the Lagrange multiplier is equal to the marginal cost.
+
+Log-linearizing the first order conditions yields,
+\beq \label{ap:lnkfoc} \h{\rho}_t(i) = \h{s}_t(i) + \h{y}_t(i) - \h{k}_t(i), \eeq
+\beq \label{ap:lnnfoc}\h{w}_t(i) - \h{p}_t = \h{s}_t(i) + \h{y}_t(i) - \h{n}_t(i), \eeq
+Combining these two equations to eliminate $\h{s}_t(i)$ and substituting equation (\ref{ap:lnlabor}) to eliminate wages and prices leads to the expression for the rental rate of capital,
+\beq \label{ap:lnrho1} \h{\rho}_t(i) = \left(\mu + 1\right) \h{n}_t(i) -\h{k}_t(i) - \h{\lambda}_t + \h{\mu}_t. \eeq
+The production function can now be used to express the rental rate of capital only in terms of output and capital.  The log-linear production function is given by,
+\beq \label{ap:lnyiprod} \h{y}_t(i) = \h{z}_t + \alpha \h{k}_t(i) + (1-\alpha) \h{n}_t(i). \eeq
+Solving equation (\ref{ap:lnyiprod}) for $\h{n}_t(i)$ and substituting this into (\ref{ap:lnrho1}) yields,
+\beq \label{ap:lnrho2} \h{\rho}_t(i) =  \frac{\mu+1}{1-\alpha} \h{y}_t(i) - \frac{1+\mu\alpha}{1-\alpha} \h{k}_t(i) - \h{\lambda}_t + \h{\mu}_t - \frac{\mu+1}{1-\alpha} \h{z}_t \eeq
+Solving equation (\ref{ap:lnkfoc}) for $\h{s}_t(i)$ and using equation (\ref{ap:lnrho2}) to substitute out $\h{\rho}_t(i)$ leads to the expression for marginal cost for firm $i$,
+\beq \label{ap:mci} \h{s}_t(i) = \frac{\alpha+\mu}{1-\alpha} \h{y}_t(i) - \frac{1+\alpha \mu}{1-\alpha} \h{k}_t(i) - \h{\lambda}_t + \h{\mu}_t - \frac{\mu+1}{1-\alpha} \h{z}_t \eeq
+Summing over all the firms leads to the average marginal cost in the economy,
+\beq \label{ap:mc} \h{s}_t = \frac{\alpha + \mu}{1-\alpha} \h{y}_t - \frac{\alpha(\mu+1)}{1-\alpha} \h{k}_t - \h{\lambda}_t + \h{\mu}_t - \frac{\mu+1}{1-\alpha} \h{z}_t \eeq
+Subtracting equation (\ref{ap:mc}) from equation (\ref{ap:mci}), leads to an expression for the marginal cost of firm $i$ in terms of the average marginal cost and the firms relative output and capital stock,
+\beq \label{ap:mci2} \h{s}_t(i) = \h{s}_t + \frac{\alpha+\mu}{1-\alpha} \left[\h{y}_t(i) - \h{y}_t\right] - \frac{\alpha+\mu}{1-\alpha} \tilde{k}_t(i) \eeq
+where $\tilde{k}_t(i) = \h{k}_t(i) - \h{k}_t$ is the relative capital stock of firm $i$.
+
+\subsubsection{Capital goods firms}
+Capital goods firms maximize the utility value of profits, given in equation (\ref{eq2:kprofit}), subject to the evolution of firm-specific capital stock, given in equation (\ref{eq2:evcap}).  Instead of explicitly computing the profit maximizing choice of investment, one can solve the evolution of capital for $I_t(i)$ and substitute this into the objective function.  The first order condition is,
+\beq \begin{array}{l} \label{ap:focI} 
+\ds \frac{\lambda_t}{\iota_t} \left[1+\phi \left(\frac{k_{t+1}(i)}{k_t(i)} - 1\right)\right] = \\ \\
+\ds \beta E_t \frac{\lambda_{t+1}}{\iota_{t+1}} \left[ \iota_{t+1} \rho_{t+1}(i) + (1-\delta) + \phi \left(\frac{k_{t+2}(i)}{k_{t+1}(i)} - 1\right) \frac{k_{t+2}(i)}{k_{t+1}(i)} - \frac{\phi}{2} \left(\frac{k_{t+2}(i)}{k_{t+1}(i)} - 1\right)^2 \right]. 
+\end{array} \eeq
+Log-linearizing this yields,
+\beq \label{ap:lnifoc} \begin{array}{l} 
+\ds \h{\lambda}_t + \phi \left(\h{k}_{t+1}(i) - \h{k}_t(i)\right) = E_t \h{\lambda}_{t+1} + \left[1-\beta \left(1-\delta \right) \right] E_t \h{\rho}_{t+1}(i) \\ \\
+\ds + \beta \phi \left(E_t\h{k}_{t+2}(i) - \h{k}_{t+1}(i)\right) + \h{\iota}_t - \beta(1-\delta)E_t \h{\iota}_{t+1}. 
+\end{array} \eeq
+Plugging equation (\ref{ap:lnrho2}) into (\ref{ap:lnifoc}) leads to the following equilibrium condition for the evolution of capital stock for firm $i$:
+\beq \label{ap:lneqki} \begin{array}{l}
+\ds \h{\lambda}_t + \phi \left(\h{k}_{t+1}(i) - \h{k}_t(i)\right) = \ds \beta (1-\delta) E_t \h{\lambda}_{t+1} \\ \\
+\ds + \left(\frac{1-\beta \left(1-\delta \right)}{1-\alpha} \right) \left[ (\mu+1) E_t \h{y}_{t+1}(i) - (1+\mu\alpha) \h{k}_{t+1}(i)\right] + \beta \phi \left(E_t\h{k}_{t+2}(i) - \h{k}_{t+1}(i)\right) \\ \\ 
+\ds + \left[1-\beta(1-\delta)\right] E_t \h{\mu}_{t+1} - \frac{\left(\mu+1\right) \left[ 1-\beta \left(1-\delta \right) \right]}{1-\alpha} E_t \h{z}_{t+1} + \h{\iota}_t - \beta(1-\delta)E_t \h{\iota}_{t+1}. 
+\end{array} \eeq
+Integrating equation (\ref{ap:lneqki}) over all firms leads to the evolution of the aggregate capital stock,
+\beq \label{ap:lneqk} \begin{array}{l}
+\ds \h{\lambda}_t + \phi \left(\h{k}_{t+1} - \h{k}_t\right) = \ds \beta (1-\delta) E_t \h{\lambda}_{t+1} + \left(\frac{1-\beta \left(1-\delta \right)}{1-\alpha} \right) \left[ (\mu+1) E_t \h{y}_{t+1} - (1+\mu\alpha) \h{k}_{t+1}\right] \\ \\ 
+\ds + \beta \phi \left(E_t\h{k}_{t+2} - \h{k}_{t+1}\right) - \frac{\left(\mu+1\right) \left[ 1-\beta \left(1-\delta \right) \right]}{1-\alpha} E_t \h{z}_{t+1} + \h{\iota_t} - \beta(1-\delta)E_t \h{\iota}_{t+1} \\
+\ds + \left[1-\beta(1-\delta)\right] E_t \h{\mu}_{t+1}, 
+\end{array} \eeq
+which is shown in equation (\ref{eq2:lneqk}) of the paper.  Subtracting equation (\ref{ap:lneqk}) from equation (\ref{ap:lneqki}) leads to following expression for firm $i$'s capital stock in terms of the aggregate capital stock,
+\beq \label{ap:kki} \begin{array}{l}
+\ds \phi \left( \tilde{k}_{t+1}(i) - \tilde{k}_{t}(i) \right) = \beta \phi \left(E_t\tilde{k}_{t+2}(i) - \tilde{k}_{t+1}(i) \right) \\ \\
+\ds + \left[ \frac{1-\beta \left(1-\delta \right)}{1-\alpha} \right] \left[ (\mu+1) E_t \left( \h{y}_{t+1}(i) -\h{y}_{t+1} \right)  - (1+\mu\alpha) \tilde{k}_{t+1}(i) \right].
+\end{array} \eeq
+
+\subsubsection{Optimal pricing}
+The inflation indexation rule given in equation (\ref{eq2:index}) can be re-written so that future prices intermediate goods firms will charge while not being able to re-optimize their price can be expressed in terms of the price chosen by the firm at time $t$.  By repeated substitution of equation (\ref{eq2:index}), the price at time $t+T$ of good $i$ can be expressed as,
+\bdm p_{t+T}(i) = p_t(i) \exp \left( \gamma \sum_{\tau = 0}^{T-1} \pi_{t + \tau} \right), \edm
+For notational convenience, let $\pi_{t+T}^* \equiv \sum_{\tau = 0}^{T-1} \pi_{t + \tau}$.  Substitute the demand equation, (\ref{eq2:yi}), into the profit function, (\ref{eq2:intprofit}), to express the profit only in terms of the intermediate good price, $p_t(i)$, and aggregate state variables the firm cannot control:
+\beq \label{ap:intprofit2}
+E_t \sum_{T=0}^{\infty} \left(\omega \beta \right)^{T} \frac{\lambda_{t+T}}{\lambda_t}
+\left\{ \left(\frac{p_t(i) e^{\gamma \pi_{t+T}^*}}{p_{t+T}}\right)^{1-\theta} y_{t+T} - S\left[\left(\frac{p_t(i) e^{\gamma \pi_{t+T}^*} }{p_{t+T}}\right)^{-\theta} y_{t+T} \right] \right\}.
+\eeq
+The first order condition with respect to $p_t(i)$ is given by,
+\beq \label{ap:intfoc} E_t \sum_{T=0}^{\infty} \left(\omega \beta \right)^{T} 
+\frac{\lambda_{t+T}}{\lambda_t}
+\left\{ \left( 1-\theta \right) \left(\frac{p_t^*(i) e^{\gamma \pi_{t+T}^*}}{p_{t+T}}\right)^{1-\theta} 
++ \theta s_{t+T}(i) \left(\frac{p_t^*(i) e^{\gamma \pi_{t+T}^*}}{p_{t+T}}\right)^{-\theta} \right\}
+\frac{y_{t+T}}{p_t^*(i)} = 0, \eeq
+where $p_t^*(i)$ is the optimal price for a firm that is able to re-optimize its price.  Since the first order condition cannot be rewritten in terms of inflation instead of prices, it is necessary to assume prices have a steady state, which implies the steady state level of inflation is equal to zero.  Before log-linearizing, it is convenient to rearrange equation (\ref{ap:intfoc}) as,
+\beq \label{ap:intfoc2} \begin{array}{l}
+\ds \left( 1-\theta \right) E_t \sum_{T=0}^{\infty} \left(\omega \beta \right)^{T} 
+\lambda_{t+T} \left(\frac{p_t^*(i) e^{\gamma \pi_{t+T}^*}}{p_{t+T}}\right)^{1-\theta} y_{t+T} = \\ \\ 
+\ds - \theta E_t \sum_{T=0}^{\infty} \left(\omega \beta \right)^{T} \lambda_{t+T}
+s_{t+T}(i) \left(\frac{p_t^*(i) e^{\gamma \pi_{t+T}^*}}{p_{t+T}}\right)^{-\theta} y_{t+T}, 
+\end{array} \eeq
+then log-linearize each side of the equal sign separately.  Log-linearizing the left hand side and right hand size, respectively, yield,
+\beq \label{ap:lleft} \left(1-\theta \right) \lambda y E_t \sum_{T=0}^{\infty} 
+\left(\omega \beta \right)^{T} \left[\h{\lambda}_{t+T} + \h{y}_{t+T} + 
+\left(1-\theta \right) \left(\h{p}_t^*(i) - \h{p}_{t+T} + \gamma \pi_{t+T}^* \right) \right], \eeq
+\beq \label{ap:lright} -\theta \lambda y s E_t \sum_{T=0}^{\infty} 
+\left(\omega \beta \right)^{T} \left[\h{\lambda}_{t+T} + \h{y}_{t+T} + \h{s}_{t+T} 
+-\theta \left(\h{p}_t^*(i) - \h{p}_{t+T} + \gamma \pi_{t+T}^* \right) \right] \eeq
+where $\lambda$ is the steady state marginal utility of income, $y$ is the steady state level of output, and $s$ is the steady state marginal cost.  Steady state marginal utility and steady output cancel out from the left and right hand sides.  The steady state marginal cost is found by evaluating the first order condition (\ref{ap:intfoc}) where $\lambda_t = \lambda$ and $p_t^*(i)=p_t=p$ for all $t$.  In the steady state equation (\ref{ap:intfoc}) simplifies to,
+\bdm \left( \frac{1}{1-\omega \beta} \right) \frac{\left(1-\theta+\theta s\right)y}{p} = 0.\edm
+The steady state solution for $s$ is given by,
+\beq \label{ap:sss} s = -\frac{1-\theta}{\theta}. \eeq
+The coefficient $-\theta~s$ in equation (\ref{ap:lright}) therefore cancels out with $1-\theta$ in equation (\ref{ap:lleft}).  Combining the left and right hand side then yields,
+\beq E_t \sum_{T=0}^{\infty} \left(\omega \beta \right)^{T} \left[\h{p}_t^*(i) - \h{p}_{t+T} + \gamma \pi_{t+T}^* - \h{s}_{t+T}(i) \right] = 0 \eeq
+Solving for $\h{p}_t^*(i)$ yields,
+\beq \label{ap:ptisum} \h{p}_t^*(i) = \left(1-\omega \beta \right)E_t \sum_{T=0}^{\infty} \left(\omega \beta \right)^{T} \left[\h{p}_{t+T} - \gamma \pi_{t+T}^* + \h{s}_{t+T}(i) \right]. \eeq
+Substitute into equation (\ref{ap:ptisum}), the log-linearized the demand for intermediate good $i$ at time $t+T$, which is given by,
+\beq \label{ap:lyidem} \h{y}_{t+T}(i)=-\theta (\h{p}_t^*(i) - \h{p}_{t+T} + \gamma \pi_{t+T}^*) + \h{y}_{t+T} \eeq
+and the marginal cost given in equation (\ref{ap:mci2}).  This leads to an expression for the optimal price for firm $i$ in terms of aggregate variables and the firm's expected future capital,
+\beq \label{ap:ptisol} \begin{array}{ll}
+\ds \h{p}_t^*(i) = & 
+\ds \left(1-\omega \beta \right)E_t \sum_{T=0}^{\infty} \left(\omega \beta \right)^{T} \left\{ \h{p}_{t+T} - \gamma \pi_{t+T}^* + \h{s}_{t+T} -\frac{\theta \left(\alpha + \mu \right)}{1-\alpha} \left[\h{p}_t^*(i) - \h{p}_{t+T} + \gamma \pi_{t+T}^* \right] \right\} \\ \\ 
+ & \ds - \left(1-\omega \beta \right)E_t \sum_{T=0}^{\infty} \left(\omega \beta \right)^{T} \left\{ \frac{\alpha \left(\mu+1 \right)}{1-\alpha} \tilde{k}_{t+T}(i) \right\}. 
+\end{array} \eeq
+The solution of this equation for $\h{p}_t^*(i)$ is given by,
+\beq \label{ap:ptisumk} \h{p}_t^*(i) = \left( 1-\omega \beta \right) E_t \sum_{T=0}^{\infty} \left(\omega \beta \right)^{T} \left[ \h{p}_{t+T} - \gamma \pi_{t+T}^* + \psi \h{s}_{t+T} - \frac{\psi \alpha (\mu+1)}{1-\alpha} \tilde{k}_{t+T}(i) \right], \eeq 
+where 
+\bdm \psi = \left[1+\frac{\theta(\alpha + \mu)}{1-\alpha} \right]^{-1}. \edm
+Equation (\ref{ap:ptisumk}) can be rewritten as the first order difference equation:
+\beq \label{ap:ptistar} \h{p}_t^*(i) = \omega \beta E_t \h{p}_{t+1}^*(i) + (1-\omega \beta) \left( \h{p}_t + \psi \h{s}_t - \frac{\psi \alpha (\mu+1)}{\mu(1-\alpha)} \tilde{k}_t(i) \right), \eeq
+where $E_t \h{p}_{t+1}^*(i)$ denotes the expectation at time $t$ for the time $t+1$ optimal decision for the firm's new price, conditional that the firm is able to re-optimize its price again in period $t+1$.  Note, this is not the same as the unconditional time $t$ expectation of the firm's price in period $t+1$.  Since with probability $\omega$ the firm will not be able to re-optimize its price next period, the unconditional expectation for firm $i$'s price in period $t+1$ is given by,
+\beq \label{ap:Eprel} E_t \h{p}_{t+1}(i) = \omega \left[ \h{p}_t^*(i) + \gamma \pi_{t-1} \right] + (1-\omega) E_t \h{p}_{t+1}^*(i). \eeq
+
+\subsubsection{Phillips Curve Solution}
+Deriving the Phillips curve when there is firm-specific capital is substantially more complicated than a model without capital or with a perfect capital rental market.  Equation (\ref{ap:ptistar}) shows that each firm's optimal price will depend on its capital stock relative to the aggregate capital stock.  Since a firm's capital stock is dependent on its entire investment history, the optimal price will depend on the firm's entire history of being able to re-optimize its price.  The convenient result from the previous section that each firm will choose the same price does not hold when there is firm-specific capital and \citename{calvo1983} pricing.  
+
+Equation (\ref{ap:ptisol}) implicitly defines the optimal choice for the price of intermediate good $i$ in terms of expectations of aggregate variables and the following expectation of the firm's future relative capital stocks:
+\beq \label{ap:ksum} E_t \sum_{T=0}^{\infty} \left(\omega \beta \right)^{T} \tilde{k}_{t+T}(i) \eeq
+To derive the Phillips curve, we must rewrite the above expression in terms of the firm's current capital stock, the current optimal price, and expectations of aggregate variables.  The optimal choice for $\tilde{k}_{t+1}(i)$ in terms of expected future output is given in equation (\ref{ap:kki}).  Substituting the log-linear demand for $y_{t+1}(i)$ into equation (\ref{ap:kki}) leads to,
+\beq \label{ap:kkip} \begin{array}{l}
+\ds \phi \left( \tilde{k}_{t+1}(i) - \tilde{k}_{t}(i) \right) = \beta \phi \left(E_t\tilde{k}_{t+2}(i) - \tilde{k}_{t+1}(i) \right) \\ \\
+\ds - \left[ \frac{1-\beta \left(1-\delta \right)}{1-\alpha} \right] \left[ \theta (\mu+1) E_t \tilde{p}_{t+1}(i) - (1 + \mu \alpha) \tilde{k}_{t+1}(i) \right].
+\end{array} \eeq
+where $\tilde{p}_{t+1}(i) = \h{p}_{t+1}(i) - \h{p}_{t+1}$ is the relative price of intermediate good $i$ in period $t+1$.  The rational expectations solution for (\ref{ap:kkip}) must have the form,
+\beq \label{ap:kmn} \tilde{k}_{t+1}(i) = m \tilde{k}_{t}(i) + n \tilde{p}_t(i), \eeq
+where $m$ and $n$ are determined by the method of undetermined coefficients in the next subsection.  For a firm re-optimizing their price, this equation can be rewritten as
+\beq \label{ap:ktilde_mn} \tilde{k}_{t+1}(i) = m \tilde{k}_{t}(i) + n \h{p}_t^*(i) - n \h{p}_t(i). \eeq
+Substituting this into equation (\ref{ap:ksum}) shows that,
+\bdm E_t \sum_{T=0}^{\infty} \left(\omega \beta \right)^{T} \tilde{k}_{t+T+1}(i) = m E_t \sum_{T=0}^{\infty} \left(\omega \beta \right)^{T} \tilde{k}_{t+T}(i) + \frac{n}{1-\omega \beta} \h{p}_t^*(i) - n E_t \sum_{T=0}^{\infty} \left(\omega \beta \right)^{T} \h{p}_{t+T}. \edm
+Multiply both sides of this equation by $(\omega \beta)$ then add $\tilde{k}_t(i)$ to both sides in order to make the summation on the left hand side identical to the summation on the right hand side.  Doing this yields,
+\bdm E_t \sum_{T=0}^{\infty} \left(\omega \beta \right)^{T} \tilde{k}_{t+T}(i) = \omega \beta m E_t \sum_{T=0}^{\infty} \left(\omega \beta \right)^{T} \tilde{k}_{t+T}(i) + \frac{\omega \beta n}{1-\omega \beta} \h{p}_t^*(i) - \omega \beta n E_t \sum_{T=0}^{\infty} \left(\omega \beta \right)^{T} \h{p}_{t+T} + \tilde{k}_{t}(i). \edm
+Solving this equation yields,
+\beq \label{ap:ksumsol} E_t \sum_{T=0}^{\infty} \left(\omega \beta \right)^{T} \tilde{k}_{t+T}(i) = \frac{1}{1-\omega \beta m} \left[ \frac{\omega \beta n}{1-\omega \beta} \h{p}_t^*(i) + \tilde{k}_t(i) - \omega \beta n E_t \sum_{T=0}^{\infty} \left(\omega \beta \right)^{T} \h{p}_{t+T} \right]. \eeq
+Substituting this into equation (\ref{ap:ptisol}) and solving for $\h{p}_t^*(i)$ leads to the following solution,
+\beq \label{ap:pstarsolk} \h{p}_t^*(i) = (1-\omega \beta) E_t \sum_{T=0}^{\infty} (\omega \beta)^T \left( \h{p}_{t+T} - \gamma \pi_{t+T}^* + \nu \h{s}_{t+T} \right) - \frac{\alpha \nu (\mu+1)(1-\omega \beta)}{(1-\alpha) (1-\omega \beta m)} \tilde{k}_{t}(i), \eeq
+where,
+\bdm \nu = \left[ 1 + \frac{\theta (\alpha + \mu)}{1-\alpha} + \frac{\alpha \omega \beta n (\mu+1)}{(1-\alpha)(1-\omega \beta m)} \right]. \edm
+Equation (\ref{ap:pstarsolk}) expresses the optimal price of intermediate good $i$ solely in terms of aggregate variables and the firm's current relative capital stock.  Since the capital stock was chosen in the previous period, it is independent of whether or not a firm is currently able to re-optimize its price.  Therefore the average capital stock among firms re-optimizing their price is equal to the average capital stock in the economy.  This implies that average value for $\tilde{k}_t(i)$ over firms re-optimizing their price is equal to zero.  Let $\h{p}_t^*$ denote the average price among these firms.  Equation (\ref{ap:pstarsolk}) implies,
+\beq \label{ap:pstarind} \h{p}_t^* = (1-\omega \beta) E_t \sum_{T=0}^{\infty} (\omega \beta)^T \left( \h{p}_{t+T} - \gamma \pi_{t+T}^* + \nu \h{s}_{t+T} \right). \eeq
+This can be rewritten as the first order difference equation,
+\beq \label{ap:pstard} \h{p}_t^* = \omega \beta E_t \h{p}_{t+1}^* + (1-\omega \beta) \left( \h{p}_t + \nu \h{s}_t \right). \eeq
+Substituting equation (\ref{ap:pstarind}) into (\ref{ap:pstard}) to eliminate $\h{p}_t^*$ and $E_t \h{p}_{t+1}^*$ leads to the Phillips curve,
+\beq \pi_t = \left(\frac{1}{1+\beta \gamma}\right) \left[ \gamma \pi_{t-1} + \beta E_t \pi_{t+1} + \kappa \h{s}_t \right], \eeq
+where,
+\bdm \kappa = \frac{(1-\omega)(1-\omega \beta)}{\nu \omega}. \edm
+
+\subsubsection{Method of Undetermined Coefficients}
+This subsection uses the method of undetermined coefficients to compute the values of $m$ and $n$ in equation (\ref{ap:ktilde_mn}) which must satisfy the optimality condition for capital given in equation (\ref{ap:kkip}).  Equation (\ref{ap:kkip}) can be rearranged as,
+\beq \label{ap:ktilde1} \tilde{k}_{t+1}(i) = \tilde{k}_t(i) + \beta E_t \tilde{k}_{t+2}(i) - \zeta_0 E_t \tilde{p}_{t+1}(i) - \zeta_1 \tilde{k}_{t+1}(i), \eeq
+where $\zeta_0$ and $\zeta_1$ are given by,
+\bdm \zeta_0 = \frac{\theta \left(\mu+1\right) \left[1 - \beta \left( 1-\delta \right) \right]}{\phi \left(1-\alpha \right)} \edm
+\bdm \zeta_1 = \beta + \frac{\left( 1+\alpha \mu \right) \left[1 - \beta \left( 1-\delta \right) \right]}{\phi \left(1-\alpha \right)} \edm
+
+I begin by finding an expression for $E_t \tilde{p}_{t+1}(i)$ in terms of $\tilde{k}_t(i)$ and $\tilde{p}_{t}(i)$.  Using equation (\ref{ap:Eprel}), the expected relative price can be rewritten as,
+\beq \label{ap:ptilde} E_t \tilde{p}_{t+1}(i) = E_t \h{p}_{t+1}(i) - E_t \h{p}_{t+1} =  \omega \h{p}_t(i) + (1-\omega) E_t \h{p}_{t+1}^*(i) - E_t \h{p}_{t+1} \eeq
+In order to express $\tilde{p}_{t+1}(i)$ only in terms of $\tilde{p}_t(i)$ and $\tilde{k}_t(i)$, we must next find a solution for $\h{p}_t^*(i)$.  According to equation (\ref{ap:ptistar}), the rational expectation solution for $\h{p}_t^*(i)$ must take the form,
+\beq \label{ap:pstar_a} \h{p}_{t}^*(i) = f(\h{p}_t,\h{s}_t) + a \tilde{k}_t(i), \eeq
+where $f(\cdot)$ is a linear function of aggregate variables and $a$ needs to be determined by the method of undetermined coefficients.  Let $\script{L}_t$ denote the set of firms re-optimizing their price in period $t$.  The average price of the firms who are able to re-optimize their price is given by,
+\bdm \h{p}_t^* = \frac{1}{1-\omega} \int_{i\in \script{L}_t} \h{p}_{t}^*(i) di = f(\h{p}_t,\h{s}_t) + \frac{a}{1-\omega} \int_{i\in \script{L}_t} \tilde{k}_t(i) di \edm
+Since $\tilde{k}_t(i)$ was chosen in period $t-1$, it is independent of whether a firm is re-optimizing its price.  Therefore the average difference between a firm's capital stock and the aggregate capital stock among firms re-optimizing their price is equal to zero.  Therefore,
+\bdm \h{p}_t^* = f(\h{p}_t,\h{s}_t), \edm
+and equation (\ref{ap:pstar_a}) can be rewritten as,
+\beq \label{ap:pstar_a1} \h{p}_t^*(i) = \h{p}_t^* + a \tilde{k}_{t}(i). \eeq
+Advancing equation (\ref{ap:pstar_a1}) one period and taking expectations yields,
+\beq \label{ap:Epstar1} E_t \h{p}_{t+1}^*(i) = E_t \h{p}_{t+1}^* + a \tilde{k}_{t+1}(i), \eeq
+where $E_t \h{p}_{t+1}^*$ is the expected average price over firms that can re-optimize their price next period.  This can be rewritten in terms of the expected aggregate price level.  Since a fraction $\omega$ firms will not be able to change their price next period and the remaining $1-\omega$ firms will have an average price $\h{p}_{t+1}^*$, the expected price level next period is given by,
+\beq \label{ap:Eptp1} E_t \h{p}_{t+1} = \omega \h{p}_t + (1-\omega) E_t \h{p}_{t+1}^*. \eeq
+Solving (\ref{ap:Eptp1}) for $E_t \h{p}_{t+1}^*$ and substituting this expression into (\ref{ap:Epstar1}) leads to,
+\beq \label{ap:Epstar2} E_t \h{p}_{t+1}^*(i) = \frac{1}{1-\omega} \left(E_t \h{p}_{t+1} - \omega \h{p}_t \right) + a \tilde{k}_{t+1}(i). \eeq
+Substituting equation (\ref{ap:ktilde_mn}) for $\tilde{k}_{t+1}(i)$ yields,
+\beq \label{ap:Epstar3} E_t \h{p}_{t+1}^*(i) = \frac{1}{1-\omega} \left(E_t \h{p}_{t+1} - \omega \h{p}_t \right) + a m \tilde{k}_{t}(i) - a n \tilde{p}_t(i). \eeq
+Plugging this into equation (\ref{ap:ptilde}) leads to an expression for $E_t \tilde{p}_{t+1}(i)$ in terms of $\tilde{p}_t(i)$ and $\tilde{k}_t(i)$,
+\beq \label{ap:ptilde2} E_t \tilde{p}_{t+1}(i) = \left[\omega + \left(1-\omega \right) a n\right] \tilde{p}_{t}(i) + \left(1-\omega \right) a m \tilde{k}_t(i) \eeq
+
+Next, using equation (\ref{ap:ktilde_mn}), the expected future capital stock is given by,
+\beq \label{ap:ktilde2} E_t \tilde{k}_{t+2}(i) = m^2 \tilde{k}_t(i) + m n \tilde{p}_t(i) + n E_t \tilde{p}_{t+1}(i) \eeq
+Substituting equation (\ref{ap:ptilde2}) into equation (\ref{ap:ktilde2}) leads to an expression for $E_t \tilde{k}_{t+2}(i)$ in terms of $\tilde{p}_t(i)$ and $\tilde{k}_t(i)$,
+\beq E_t \tilde{k}_{t+2}(i) = \left[m^2 + amn\left(1-\omega \right) \right] \tilde{k}_t(i) + \left[ mn + n\omega + a n^2(1-\omega) \right] \tilde{p}_{t}(i) \eeq
+Plugging in equations (\ref{ap:ptilde2}), (\ref{ap:ktilde2}), and (\ref{ap:ktilde_mn}) into (\ref{ap:ktilde1}) leads to an expression for capital of the form given in equation (\ref{ap:ktilde_mn}) where $m$ and $n$ must satisfy, respectively,
+\beq \label{ap:mcond} \beta m^2 + \left[\beta a n (1-\omega) - \zeta_1 - \zeta_0 a (1-\omega) - 1\right] m + 1 = 0, \eeq
+\beq \label{ap:ncond} \beta a (1-\omega) n^2 + \left[\beta m + \beta \omega - \zeta_1 - \zeta_0 a (1-\omega) - 1\right] n - \zeta_0 \omega = 0. \eeq
+
+All that remains is to find an expression for $a$, also using the method of undetermined coefficients.  Substituting the expression for $E_t \h{p}_{t+1}^*(i)$ given in equation (\ref{ap:Epstar3}) into equation (\ref{ap:ptistar}) and solving for $\h{p}_t^*(i)$ yields,
+\beq \begin{array}{ll}
+\ds \h{p}_t^*(i) = & \ds \frac{1}{1-\omega \beta a n} \left( \omega \beta a m - \frac{\psi \alpha \left(\mu + 1\right)}{(1-\alpha)} \right) \tilde{k}_{t}(i) \\ \\ 
+ & \ds + \frac{\omega \beta}{\left(1-\omega \right) \left(1-\omega \beta a n \right)} \left( E_t \h{p}_{t+1} - \omega \h{p}_t \right) +  \h{p}_t + \frac{\psi}{1-\omega \beta a n} \hat{s}_t, 
+\end{array} \eeq 
+which implies $a$ must satisfy the quadratic equation,
+\beq \label{ap:acond} \omega \beta n a^2 + \left( \omega \beta m - 1 \right) a - \frac{\alpha \psi (\mu+1)}{1-\alpha} = 0. \eeq
+
+Equations (\ref{ap:mcond}), (\ref{ap:ncond}), and (\ref{ap:acond}) make up a system of quadratic equations that jointly determine the values for $m$, $n$, and $a$ in terms of the parameters of the model.  Since this is a system of three quadratic equations, there are potentially eight solutions, but these equations alone do not rule out economically infeasible outcomes.  Equations (\ref{ap:kmn}) and (\ref{ap:ptilde2}) can be rewritten as the following dynamic system:
+\beq \label{ap:sys}
+\left[ \begin{array}{c} \tilde{k}_{t+1}(i) \\ E_t \tilde{p}_{t+1}(i) \end{array} \right] =
+\left[ \begin{array}{cc} m & n \\ \omega + (1-\omega)an & 1-\omega \end{array} \right]
+\left[ \begin{array}{c} \tilde{k}_{t}(i) \\ \tilde{p}_{t}(i) \end{array} \right].
+\eeq
+
+The economically feasible solution for $m$, $n$, and $a$ must be consistent with stable means and variances of each firm's relative capital stock and relative price.  The system is stable if and only if the eigenvalues of the matrix in equation (\ref{ap:sys}) are inside the unit circle.  The eigenvalues are given by,
+\bdm e_1 = \frac{1}{2} \left( m+\omega + (1-\omega)an + \sqrt{\left[m+\omega + (1-\omega)an\right]^2 - 4m\omega} \right) \edm
+\bdm e_2 = \frac{1}{2} \left( m+\omega + (1-\omega)an - \sqrt{\left[m+\omega + (1-\omega)an\right]^2 - 4m\omega} \right) \edm
+It is evident from these equations that $e_1 > e_2$.  Therefore both eigenvalues will be less than 1 in absolute value if and only if $e_1 < 1$ and $e_2 > -1$.  The condition on the first eigenvalue implies,
+\beq \label{ap:e1cond1} \sqrt{\left[m+\omega + (1-\omega)an\right]^2 - 4 m \omega} < 2 - m - \omega - (1-\omega)an. \eeq
+Since the left hand side of the inequality is always positive, the left hand side must also be positive.  Therefore, squaring both sides preserves the direction of the inequality.  Doing this yields,
+\beq \label{ap:e1cond2} \left[m+\omega + (1-\omega)an\right]^2 - 4 m \omega < 4 - 4\left[ m + \omega + (1-\omega)an \right] + 4 \left[m+\omega + (1-\omega)an\right]^2 \eeq
+This inequality does not preserve the restriction implied in (\ref{ap:e1cond1}) that the right hand side be positive.  Therefore (\ref{ap:e1cond1}) also implies
+\beq \label{ap:e1cond3} 2 - m - \omega - (1-\omega)an > 0. \eeq
+The inequalities (\ref{ap:e1cond2}) and (\ref{ap:e1cond3}) simplify to, respectively,
+\beq \label{ap:econd1} m < 1 - an \eeq
+\beq \label{ap:econd2} m < 1 + (1-\omega)(1-an) \eeq
+The stability condition for the second eigenvalue is,
+\bdm \sqrt{\left[m+\omega + (1-\omega)an\right]^2 - 4 m \omega} < 2 + m + \omega + (1-\omega)an, \edm
+which simplifies to,
+\beq \label{ap:econd3} m > -1 - \frac{1-\omega}{1+\omega} an \eeq
+Finally, the coefficients $m$, $n$, and $a$ can be found by the solving the system of quadratic equations (\ref{ap:mcond}), (\ref{ap:ncond}), and (\ref{ap:acond}), subject to the inequalities (\ref{ap:econd1}), (\ref{ap:econd2}), and (\ref{ap:econd3}).   
+
+\subsection{Market clearing}
+Goods market clearing implies total output of the final good is equal to aggregate consumption plus aggregate investment,
+\bdm y_t = c_t + I_t. \edm
+Log-linearizing this yields,
+\beq \label{ap:lnmkt} \h{y}_t = c_y \h{c}_t + \delta k_y \h{I}_t, \eeq
+where $c_y$ is the steady state consumption to output ratio and $k_y$ is the steady state capital to output ratio.  The steady state capital to output ratio is found by combining the steady state first order condition for capital rental, given in equation (\ref{ap:fock}), and the steady state  first order condition for investment, given in equation (\ref{ap:focI}).  Evaluating equation (\ref{ap:fock}) at the steady state and using the steady state marginal cost, given in equation (\ref{ap:sss}), yields,
+\bdm \rho = \alpha \frac{\theta-1}{\theta} \left(\frac{y}{k}\right). \edm
+Evaluating equation (\ref{ap:focI}) at the steady state yields,
+\bdm 1 = \beta \left(\rho + 1 - \delta \right). \edm
+Combining these equations to eliminate $\rho$ leads to the following capital to output ratio,
+\beq k_y = \frac{\beta \alpha (\theta-1)}{\theta \left( 1 - \beta + \beta \delta \right)} \eeq
+Evaluating the goods market clearing condition, (\ref{ap:lnmkt}), at the steady state yields the following consumption to output ratio,
+\beq c_y = 1 - \delta k_y. \eeq

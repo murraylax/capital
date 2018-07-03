@@ -1,0 +1,9 @@
+cp /home/jmmurray/workspace/code/nkcap/results/results_re/*.png /home/jmmurray/workspace/research/capital/results/results_re/
+
+cp /home/jmmurray/workspace/code/nkcap/results/results_reallinit/*.png /home/jmmurray/workspace/research/capital/results/results_reallinit/
+
+cp /home/jmmurray/workspace/code/nkcap/results/results_reinit/*.png /home/jmmurray/workspace/research/capital/results/results_reinit/
+
+cp /home/jmmurray/workspace/code/nkcap/results/results_wlsinit/*.png /home/jmmurray/workspace/research/capital/results/results_wlsinit/
+
+cp /home/jmmurray/workspace/code/nkcap/results/*.png /home/jmmurray/workspace/research/capital/results/
